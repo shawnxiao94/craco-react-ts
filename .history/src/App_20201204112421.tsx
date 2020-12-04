@@ -1,13 +1,12 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React from 'react';
-import logo from '@/logo.svg';
-import {Button} from 'antd';
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} width={50} className="App-logo" alt="logo" />
+        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
@@ -19,8 +18,6 @@ function App() {
         >
           Learn React
         </a>
-        <Button type="primary">你好啊</Button>
-        <Button type="link">Link Button</Button>
       </header>
     </div>
   );

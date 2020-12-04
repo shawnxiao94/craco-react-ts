@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import React from 'react';
-import logo from '@/logo.svg';
-import {Button} from 'antd';
+import React from 'react'
+import logo from '@/logo.svg'
+import { Button } from 'antd'
 
 function App() {
   return (
@@ -23,7 +22,7 @@ function App() {
         <Button type="link">Link Button</Button>
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

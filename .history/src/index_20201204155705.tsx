@@ -4,6 +4,7 @@ import 'antd/dist/antd.css';
 import './index.less';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
