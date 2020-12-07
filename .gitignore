@@ -10,6 +10,7 @@
 
 # production
 /build
+/dist
 
 # misc
 .DS_Store
@@ -18,6 +19,18 @@
 .env.test.local
 .env.production.local
 
+.history
+.vscode
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+# Editor directories and files
+.DS_Store
+package-lock.json
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
