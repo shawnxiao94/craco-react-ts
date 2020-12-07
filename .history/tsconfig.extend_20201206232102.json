@@ -1,0 +1,11 @@
+// cra 创建的 typescript 项目，添加完 alias 后，你还需要在 tsconfig.json 文件中新增配置，否则会提示出错。并且，新版本 cra 创建的项目，在编译时会自动格式化 tsconfig.json，你向里面添加的若干配置，可能会自动被清除掉。
+// 这里利用 tsconfig 的 extends 参数去扩展需要的配置。
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["src/*"],
+      "@components/*": ["src/components/*"]
+    }
+  }
+}

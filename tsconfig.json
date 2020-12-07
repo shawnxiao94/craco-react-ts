@@ -18,15 +18,15 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
-    "baseUrl": "./",
-    "experimentalDecorators": false
+    "jsx": "react-jsx"
   },
+  "extends": "./tsconfig.extend.json",
   "include": [
     "src"
   ],
   "exclude": [
     "node_modules",
+    "dist",
     "build"
   ]
 }
