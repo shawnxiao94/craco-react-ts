@@ -1,2 +1,9 @@
 /.vscode
 node_modules
+/dist
+/public
+serviceWorker.js
+.eslintrc.js
+.prettierrc.js
+craco.config.js
+tsconfig.json

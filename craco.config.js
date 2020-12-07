@@ -1,23 +1,23 @@
 /*
  * @Author: your name
  * @Date: 2020-12-06 22:27:11
- * @LastEditTime: 2020-12-07 11:48:59
+ * @LastEditTime: 2020-12-07 16:22:22
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /ts-craco-react/craco.config.js
  */
-const { whenDev } = require('@craco/craco')
-const webpack = require('webpack')
-const WebpackBar = require('webpackbar')
-const SimpleProgressWebpackPlugin = require('simple-progress-webpack-plugin')
-const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin')
-const CircularDependencyPlugin = require('circular-dependency-plugin')
-const DashboardPlugin = require('webpack-dashboard/plugin')
-const CracoAntDesignPlugin = require('craco-antd')
-const CracoLessPlugin = require('craco-less')
+const {whenDev} = require('@craco/craco');
+const webpack = require('webpack');
+const WebpackBar = require('webpackbar');
+const SimpleProgressWebpackPlugin = require('simple-progress-webpack-plugin');
+const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin');
+const CircularDependencyPlugin = require('circular-dependency-plugin');
+const DashboardPlugin = require('webpack-dashboard/plugin');
+const CracoAntDesignPlugin = require('craco-antd');
+const CracoLessPlugin = require('craco-less');
 
-const path = require('path')
-const pathResolve = (pathUrl) => path.join(__dirname, pathUrl)
+const path = require('path');
+const pathResolve = pathUrl => path.join(__dirname, pathUrl);
 
 module.exports = {
   babel: {
@@ -38,18 +38,14 @@ module.exports = {
     ],
     plugins: [
       // 配置 babel-plugin-import
-      [
-        'import',
-        { libraryName: 'antd', libraryDirectory: 'es', style: true },
-        'antd',
-      ],
+      ['import', {libraryName: 'antd', libraryDirectory: 'es', style: true}, 'antd'],
       // 配置解析器
-      ['@babel/plugin-proposal-decorators', { legacy: true }],
-      ['@babel/plugin-proposal-class-properties', { loose: true }],
-      ['babel-plugin-styled-components', { displayName: true }],
+      ['@babel/plugin-proposal-decorators', {legacy: true}],
+      ['@babel/plugin-proposal-class-properties', {loose: true}],
+      ['babel-plugin-styled-components', {displayName: true}],
     ],
-    loaderOptions: (babelLoaderOptions, { env, paths }) => {
-      return babelLoaderOptions
+    loaderOptions: (babelLoaderOptions, {env, paths}) => {
+      return babelLoaderOptions;
     },
   },
   webpack: {
@@ -117,9 +113,9 @@ module.exports = {
      *  - 与直接定义 configure 对象方式互斥
      *  - 几乎所有的 webpack 配置均可以在 configure 函数中读取，然后覆盖
      */
-    configure: (webpackConfig, { env, paths }) => {
+    configure: (webpackConfig, {env, paths}) => {
       // paths.appPath='public'
-      paths.appBuild = 'dist' // 配合输出打包修改文件目录
+      paths.appBuild = 'dist'; // 配合输出打包修改文件目录
       webpackConfig.output = {
         ...webpackConfig.output,
         // ...{
@@ -128,7 +124,7 @@ module.exports = {
         // },
         path: path.resolve(__dirname, 'dist'), // 修改输出文件目录
         publicPath: '/',
-      }
+      };
       // webpackConfig.optimization.splitChunks = {
       //   ...webpackConfig.optimization.splitChunks,
       //   ...{
@@ -136,7 +132,7 @@ module.exports = {
       //     name: true
       //   }
       // }
-      return webpackConfig
+      return webpackConfig;
     },
   },
   plugins: [
@@ -144,10 +140,7 @@ module.exports = {
     {
       plugin: CracoAntDesignPlugin,
       options: {
-        customizeThemeLessPath: path.join(
-          __dirname,
-          'src/styles/antd.theme.less'
-        ),
+        customizeThemeLessPath: path.join(__dirname, 'src/styles/antd.theme.less'),
       },
     },
     /* 支持less module */
@@ -155,12 +148,12 @@ module.exports = {
       plugin: CracoLessPlugin,
       options: {
         cssLoaderOptions: {
-          modules: { localIdentName: '[local]_[hash:base64:5]' },
+          modules: {localIdentName: '[local]_[hash:base64:5]'},
         },
         modifyLessRule: function (lessRule, _context) {
-          lessRule.test = /\.(module)\.(less)$/
-          lessRule.exclude = path.join(__dirname, 'node_modules')
-          return lessRule
+          lessRule.test = /\.(module)\.(less)$/;
+          lessRule.exclude = path.join(__dirname, 'node_modules');
+          return lessRule;
         },
       },
     },
@@ -176,4 +169,4 @@ module.exports = {
       },
     },
   },
-}
+};
