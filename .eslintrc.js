@@ -1,8 +1,8 @@
 /*
  * @Author: your name
  * @Date: 2020-12-07 15:56:03
- * @LastEditTime: 2020-12-07 15:56:08
- * @LastEditors: your name
+ * @LastEditTime: 2020-12-07 16:40:53
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /ts-craco-react/.eslintrc.js
  */
@@ -28,9 +28,18 @@ module.exports = {
   },
   rules: {
     // 如果有不适合的规则，可以在此调整
+    'import/extensions': ['.js', '.jsx', '.json', '.ts', '.tsx']
     // ...
     // 'no-undef': 'off',
     // 'no-restricted-globals': 'off',
     // 'no-unused-vars': 'off',
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        paths: ['src'],
+        extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
+      },
+    },
   },
 };

@@ -1,0 +1,21 @@
+//  路由转场动画
+.fade-enter {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.fade-enter-active,
+.fade-exit-active {
+  opacity: 1;
+  transition: all 500ms ease-out;
+  transform: translateX(0);
+  -webkit-transition: all 500ms ease-out;
+  -moz-transition: all 500ms ease-out;
+  -ms-transition: all 500ms ease-out;
+  -o-transition: all 500ms ease-out;
+}
+
+.fade-exit {
+  opacity: 0;
+  transform: translateX(30px);
+}
